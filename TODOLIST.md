@@ -1,6 +1,7 @@
 ##### INITIAL SET-UP
 
 [✅] - INSTALL NPM
+[✅] - INSTALL (npm install redux@4 react-redux@7 redux-logger@3)
 
 # COMPONENTS FOR EACH FEEDBACK.
 
