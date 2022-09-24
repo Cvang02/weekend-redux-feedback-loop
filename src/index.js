@@ -10,19 +10,43 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 // REDUCERS + OUR ACTIONS
-const feedbackReducer = (state = [], action) => {
-    if (action.type === 'ADD_FEEDBACK') {
-        console.log('what is:', action.payload);
+const feelingReducer = (state = [], action) => {
+    if (action.type === 'ADD_FEELING') {
         return action.payload;
     }
     return state
-} // END OF feedbackReducer FUNCTION.
+} // END OF feelingReducer FUNCTION.
+
+const understandingReducer = (state = [], action) => {
+    if (action.type === 'ADD_UNDERSTANDING') {
+        return action.payload;
+    }
+    return state
+} // END OF understandingReducer FUNCTION.
+
+const supportReducer = (state = [], action) => {
+    if (action.type === 'ADD_SUPPORT') {
+        return action.payload;
+    }
+    return state
+} // END OF supportReducer FUNCTION.
+
+const commentsReducer = (state = [], action) => {
+    if (action.type === 'ADD_COMMENTS') {
+        return action.payload;
+    }
+    return state
+} // END OF supportReducer FUNCTION.
+
 
 // STOREINSTANCE
 const storeInstance = createStore(
     
     combineReducers({
-        feedbackReducer
+        feelingReducer,
+        understandingReducer,
+        supportReducer,
+        commentsReducer,
     }),
 
     applyMiddleware(logger)
