@@ -12,11 +12,16 @@ function SupportForm () {
 
     // ACTION 
     const addsupportData = () => {
+        if (!support) {
+            alert('Number must be imput or else support input will be default to 0');
+        }
+        else {
         const action = {
             type: 'ADD_SUPPORT',
             payload: support
         }
         dispatch(action);
+        }
     }
 
     return (

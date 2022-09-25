@@ -12,11 +12,16 @@ function UnderstandingForm () {
 
     // ACTION 
     const addUnderstandingData = () => {
+        if (!understanding) {
+            alert('Number must be imput or else understanding input will be default to 0');
+        }
+        else {
         const action = {
             type: 'ADD_UNDERSTANDING',
             payload: understanding
         }
         dispatch(action);
+        }
     }
 
     return (

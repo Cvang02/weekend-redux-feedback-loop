@@ -12,11 +12,16 @@ function FeelingForm () {
 
     // ACTION
     const addFeelingData = () => {
+        if (!feeling) {
+            alert('Number must be imput or else feeling input will be default to 0');
+        }
+        else {
         const action = {
             type: 'ADD_FEELING',
             payload: feeling
         }
         dispatch(action);
+        }
     }
 
     return (
