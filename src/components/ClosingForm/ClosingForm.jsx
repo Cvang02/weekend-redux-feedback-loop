@@ -1,12 +1,21 @@
 import { Link } from 'react-router-dom';
 
+// MATERIAL UI
+import Button from '@mui/material/Button';
+
 function ClosingForm () {
     return (
-        <div>
-            <h1>CLOSING FORM</h1>
-            <h1>Feedback!</h1>
+        <div className='closingDiv'>
             <h1>Thank You!</h1>
-            <Link to='/'><button>Leave New Feedback</button></Link>
+            <Link to='/'>
+                <Button 
+                    variant="contained" 
+                    color="secondary"
+                    size="large"
+                >
+                    Leave New Feedback
+                </Button>
+            </Link>
         </div>
     )
 }
