@@ -12,6 +12,7 @@ import SupportForm from '../SupportForm/SupportForm.jsx';
 import CommentForm from '../CommentForm/CommentForm.jsx';
 import ReviewForm from '../ReviewForm/ReviewForm.jsx';
 import ClosingForm from '../ClosingForm/ClosingForm.jsx';
+import HomePage from '../HomePage/HomePage';
 
 function App() {
 
@@ -21,6 +22,9 @@ function App() {
       <Router>
         <div>
           <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route exact path="/feeling">
             <FeelingForm />
           </Route>
           <Route exact path="/understanding">

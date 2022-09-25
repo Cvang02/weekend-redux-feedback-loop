@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useHistory } from 'react-router-dom';
 import React from "react";
 
@@ -8,7 +8,7 @@ function ReviewForm () {
     const feeling = useSelector((store) => store.feelingReducer)
     const understanding = useSelector((store) => store.understandingReducer)
     const support = useSelector((store) => store.supportReducer)
-    const commentSection = useSelector((store) => store.commentsReducer)
+    const comments = useSelector((store) => store.commentsReducer)
 
 
     // OUR DATA THAT WE WANT TO PASS
@@ -16,9 +16,9 @@ function ReviewForm () {
         feeling: Number(feeling),
         understanding: Number(understanding), 
         support: Number(support), 
-        comments: commentSection
+        comments: comments
     }
-
+    
     // POST AXIOS ROUTE
     const submitFeedbackForm = () => {
         axios({
@@ -28,7 +28,7 @@ function ReviewForm () {
         })
         .then((postResponse) => {
             console.log('CLIENT POST SUCCESS:', postResponse);
-            sendBackToMenu();
+            sendBackToHomePage();
         })
         .catch((postError) => {
             console.log('CLIENT POST UNSUCCESS:', postError);
@@ -36,14 +36,11 @@ function ReviewForm () {
 
     } // END OF submitFeedbackForm
 
-    const dispatch = useDispatch();
-
     const history = useHistory();
-    const sendBackToMenu = () => {
-        alert('Thank you for your order!');
+    const sendBackToHomePage = () => {
+        alert('Thank you for your Feedback!');
         history.push('/closing');
     }
-
 
     return (
         <div>
@@ -52,7 +49,7 @@ function ReviewForm () {
             <h2>Feeling: {feeling}</h2>
             <h2>Understanding: {understanding}</h2>
             <h2>Support: {support}</h2>
-            <h2>Comments: {commentSection}</h2>
+            <h2>Comments: {comments}</h2>
             <button onClick={submitFeedbackForm}>SUBMIT</button>
         </div>
     )
