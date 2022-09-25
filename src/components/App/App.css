@@ -21,3 +21,22 @@
 h4 {
   font-style: italic;
 }
+
+.css-1ri6ub7-MuiPaper-root-MuiCard-root {
+    margin: auto;
+}
+
+Button.css-1xnmwiw-MuiButtonBase-root-MuiButton-root {
+  margin: 20px;
+}
+
+.App-header {
+  padding: 100px;
+  background: purple;
+}
+
+.homeDiv, .feelingDiv, .understandingDiv, .supportDiv, .commentsDiv, .reviewDiv, .closingDiv {
+  margin: 50px;
+  padding: 50px;
+}
+
